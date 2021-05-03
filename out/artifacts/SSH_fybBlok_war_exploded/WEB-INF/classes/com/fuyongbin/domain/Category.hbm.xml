@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--name:代表的是哪一个表 table：代表的是数据库的哪一张表-->
+    <class name="com.fuyongbin.domain.Category" table="category">
+        <!--建立类属性哪一个是主键 还要跟数据库当中主键进行对应-->
+        <id name="cid" column="cid">
+            <!--generstor：主键的生成策略-->
+            <generator class="native"/>
+        </id>
+
+        <!--建立类中的普通属性与数据库当中字段进行关联-->
+        <property name="cname" column="cname"/>
+        <property name="parentid" column="parentid"/>
+
+    <!--多对多-->
+        <!--多对多的关系
+            name:当前集合属性名称
+            table：多对多中间表的名称 表名
+            <key column=""></key>当前表的外键
+            <many-to-many class="" column=""/>
+            class:集合中对象的全路径
+            column:集合中对象的外键
+        -->
+
+    </class>
+</hibernate-mapping>

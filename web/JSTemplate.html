@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/template.js"></script>
+</head>
+<body>
+
+<div id="content">
+
+</div>
+
+
+<script id="mytemp" type="text/html">
+    <h1>{{title}}</h1>
+    {{if isAdmin}}
+    <h2>{{score}}</h2>
+    {{/if}}
+    {{each list as value i}}
+        <li> {{i}}{{value}}</li>
+    {{/each}}
+
+</script>
+
+<script>
+
+    var data = {
+        title: '射手',
+        isAdmin: true,
+        score:61,
+        list: ['鲁班', '孙尚香', '黄忠', '马可波罗', '公孙离', '后裔', '咖罗']
+    };
+
+    var html =template("mytemp",data);
+    document.getElementById("content").innerHTML=html;
+
+</script>
+
+</body>
+</html>
